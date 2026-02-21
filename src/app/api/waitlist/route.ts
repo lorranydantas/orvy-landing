@@ -9,46 +9,24 @@ function GlobalKeyframes() {
   return (
     <style jsx global>{`
       @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
       }
       @keyframes orbit {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
       }
       @keyframes orbitReverse {
-        from {
-          transform: rotate(360deg);
-        }
-        to {
-          transform: rotate(0deg);
-        }
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
       }
       @keyframes counterRotate {
-        from {
-          transform: rotate(360deg);
-        }
-        to {
-          transform: rotate(0deg);
-        }
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
       }
       @keyframes counterRotateReverse {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
       }
     `}</style>
   );
@@ -58,8 +36,10 @@ function GlobalKeyframes() {
    POINTILLISM PATTERNS (SVG dots)
 ──────────────────────────────────────────────────────────── */
 function PointillismPattern({ variant = 0 }: { variant?: number }) {
+  // Different dot patterns for variety
   const patterns = [
-    <g key="p0">
+    // Pattern 0: Circular cluster
+    <>
       <circle cx="12" cy="8" r="1.5" fill="#2EE6FF" />
       <circle cx="8" cy="12" r="1" fill="#ffffff" opacity="0.8" />
       <circle cx="16" cy="12" r="1.2" fill="#2EE6FF" opacity="0.9" />
@@ -68,8 +48,9 @@ function PointillismPattern({ variant = 0 }: { variant?: number }) {
       <circle cx="12" cy="12" r="1.8" fill="#20B8CD" />
       <circle cx="6" cy="10" r="0.8" fill="#ffffff" opacity="0.6" />
       <circle cx="18" cy="14" r="0.8" fill="#2EE6FF" opacity="0.7" />
-    </g>,
-    <g key="p1">
+    </>,
+    // Pattern 1: Rising dots
+    <>
       <circle cx="12" cy="6" r="1.2" fill="#2EE6FF" />
       <circle cx="10" cy="10" r="1.5" fill="#ffffff" opacity="0.8" />
       <circle cx="14" cy="9" r="1" fill="#2EE6FF" opacity="0.9" />
@@ -78,8 +59,9 @@ function PointillismPattern({ variant = 0 }: { variant?: number }) {
       <circle cx="12" cy="17" r="1.4" fill="#2EE6FF" opacity="0.8" />
       <circle cx="6" cy="12" r="0.9" fill="#2EE6FF" opacity="0.6" />
       <circle cx="18" cy="10" r="0.7" fill="#ffffff" opacity="0.5" />
-    </g>,
-    <g key="p2">
+    </>,
+    // Pattern 2: Scattered
+    <>
       <circle cx="7" cy="7" r="1.3" fill="#2EE6FF" />
       <circle cx="17" cy="8" r="1.1" fill="#ffffff" opacity="0.8" />
       <circle cx="12" cy="11" r="1.6" fill="#20B8CD" />
@@ -88,8 +70,9 @@ function PointillismPattern({ variant = 0 }: { variant?: number }) {
       <circle cx="10" cy="14" r="0.9" fill="#2EE6FF" opacity="0.8" />
       <circle cx="18" cy="12" r="0.8" fill="#2EE6FF" opacity="0.6" />
       <circle cx="9" cy="9" r="0.7" fill="#ffffff" opacity="0.5" />
-    </g>,
-    <g key="p3">
+    </>,
+    // Pattern 3: Diamond
+    <>
       <circle cx="12" cy="5" r="1.2" fill="#2EE6FF" />
       <circle cx="6" cy="12" r="1.3" fill="#ffffff" opacity="0.8" />
       <circle cx="18" cy="12" r="1.1" fill="#2EE6FF" opacity="0.9" />
@@ -98,8 +81,9 @@ function PointillismPattern({ variant = 0 }: { variant?: number }) {
       <circle cx="15" cy="8" r="1" fill="#2EE6FF" opacity="0.8" />
       <circle cx="9" cy="16" r="0.8" fill="#2EE6FF" opacity="0.6" />
       <circle cx="15" cy="16" r="0.9" fill="#ffffff" opacity="0.7" />
-    </g>,
-    <g key="p4">
+    </>,
+    // Pattern 4: Spiral
+    <>
       <circle cx="12" cy="12" r="1.5" fill="#2EE6FF" />
       <circle cx="15" cy="10" r="1.2" fill="#ffffff" opacity="0.8" />
       <circle cx="16" cy="14" r="1" fill="#20B8CD" />
@@ -108,8 +92,9 @@ function PointillismPattern({ variant = 0 }: { variant?: number }) {
       <circle cx="7" cy="13" r="1.3" fill="#2EE6FF" opacity="0.8" />
       <circle cx="8" cy="9" r="1" fill="#ffffff" opacity="0.6" />
       <circle cx="11" cy="7" r="0.8" fill="#2EE6FF" opacity="0.7" />
-    </g>,
-    <g key="p5">
+    </>,
+    // Pattern 5: Wave
+    <>
       <circle cx="5" cy="12" r="1.1" fill="#2EE6FF" />
       <circle cx="8" cy="9" r="1.3" fill="#ffffff" opacity="0.8" />
       <circle cx="11" cy="13" r="1.5" fill="#20B8CD" />
@@ -118,8 +103,9 @@ function PointillismPattern({ variant = 0 }: { variant?: number }) {
       <circle cx="19" cy="11" r="0.9" fill="#2EE6FF" opacity="0.8" />
       <circle cx="10" cy="16" r="0.8" fill="#2EE6FF" opacity="0.6" />
       <circle cx="15" cy="17" r="0.7" fill="#ffffff" opacity="0.5" />
-    </g>,
-    <g key="p6">
+    </>,
+    // Pattern 6: Constellation
+    <>
       <circle cx="12" cy="6" r="1.4" fill="#2EE6FF" />
       <circle cx="7" cy="10" r="1.1" fill="#ffffff" opacity="0.8" />
       <circle cx="17" cy="9" r="1.2" fill="#20B8CD" />
@@ -128,8 +114,9 @@ function PointillismPattern({ variant = 0 }: { variant?: number }) {
       <circle cx="19" cy="14" r="0.9" fill="#ffffff" opacity="0.8" />
       <circle cx="9" cy="18" r="1.1" fill="#2EE6FF" opacity="0.6" />
       <circle cx="15" cy="18" r="0.8" fill="#ffffff" opacity="0.7" />
-    </g>,
-    <g key="p7">
+    </>,
+    // Pattern 7: Dense cluster
+    <>
       <circle cx="10" cy="10" r="1.3" fill="#2EE6FF" />
       <circle cx="14" cy="10" r="1.1" fill="#ffffff" opacity="0.8" />
       <circle cx="12" cy="13" r="1.5" fill="#20B8CD" />
@@ -139,7 +126,7 @@ function PointillismPattern({ variant = 0 }: { variant?: number }) {
       <circle cx="13" cy="8" r="1" fill="#2EE6FF" opacity="0.6" />
       <circle cx="8" cy="12" r="0.7" fill="#ffffff" opacity="0.5" />
       <circle cx="16" cy="12" r="0.8" fill="#2EE6FF" opacity="0.7" />
-    </g>,
+    </>,
   ];
 
   return (
@@ -183,6 +170,7 @@ function OrvySymbol({
               </feMerge>
             </filter>
           </defs>
+          {/* Outer glow */}
           <circle
             cx="50"
             cy="50"
@@ -192,6 +180,7 @@ function OrvySymbol({
             strokeWidth="2"
             opacity="0.3"
           />
+          {/* Main ring */}
           <circle
             cx="50"
             cy="50"
@@ -201,6 +190,7 @@ function OrvySymbol({
             strokeWidth="12"
             filter="url(#glow)"
           />
+          {/* Inner dark */}
           <circle cx="50" cy="50" r="26" fill="#030a10" />
         </svg>
       </div>
@@ -285,10 +275,8 @@ function HeroOrbits() {
   ];
 
   return (
-    <div
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      aria-hidden
-    >
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+      {/* Outer orbit */}
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         style={{ width: outerRadius * 2, height: outerRadius * 2 }}
@@ -315,6 +303,7 @@ function HeroOrbits() {
         </div>
       </div>
 
+      {/* Inner orbit */}
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         style={{ width: innerRadius * 2, height: innerRadius * 2 }}
@@ -368,9 +357,8 @@ function useRotatingText(items: typeof ROTATING, ms = 2000) {
 export default function Home() {
   const current = useRotatingText(ROTATING, 2000);
 
-  const [email, setEmail] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState<"idle" | "ok" | "error">("idle");
+  const [waitStatus, setWaitStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [waitMsg, setWaitMsg] = useState<string>("");
 
   const faqs = useMemo(
     () => [
@@ -387,41 +375,16 @@ export default function Home() {
         a: "A ideia é começar com uma experiência acessível e evoluir com planos Pro. Você vai ver tudo primeiro como early user.",
       },
     ],
-    []
+    [],
   );
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setSubmitted("idle");
-
-    try {
-      const res = await fetch("https://formspree.io/f/xeelrzjq", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({ email: email.trim().toLowerCase() }),
-      });
-
-      if (!res.ok) throw new Error("Erro");
-
-      setSubmitted("ok");
-      setEmail("");
-    } catch (err) {
-      console.error(err);
-      setSubmitted("error");
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   return (
     <main className="min-h-screen bg-[#030a10] text-white overflow-x-hidden">
       <GlobalKeyframes />
 
-      {/* NAV */}
+      {/* ═══════════════════════════════════════════════════════
+          NAV
+      ═══════════════════════════════════════════════════════ */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030a10]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
@@ -448,8 +411,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* ═══════════════════════════════════════════════════════
+          HERO
+      ═══════════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center">
+        {/* Background gradient */}
         <div
           className="absolute inset-0 -z-20"
           style={{
@@ -464,11 +430,14 @@ export default function Home() {
 
         <HeroOrbits />
 
+        {/* Center content */}
         <div className="relative z-10 text-center px-6 max-w-[600px]">
+          {/* ORVY Symbol with text */}
           <div className="mx-auto mb-8 flex justify-center">
             <OrvySymbol size={90} showText />
           </div>
 
+          {/* Headline with correct gender */}
           <h1 className="text-[42px] sm:text-[56px] md:text-[72px] font-semibold leading-[1.05] tracking-[-0.02em] text-[#f5f5f0]">
             Evolua{" "}
             <span
@@ -480,11 +449,13 @@ export default function Home() {
             </span>
           </h1>
 
+          {/* Subtitle */}
           <p className="mt-4 text-base sm:text-lg text-[#f5f5f0]/60 leading-relaxed">
             Sistema gamificado de evolução financeira
             <br className="hidden sm:block" /> e disciplina pessoal.
           </p>
 
+          {/* CTA - rounded blue button */}
           <div className="mt-8">
             <a
               href="#waitlist"
@@ -496,7 +467,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COMO FUNCIONA */}
+      {/* ═══════════════════════════════════════════════════════
+          COMO FUNCIONA
+      ═══════════════════════════════════════════════════════ */}
       <section id="como" className="mx-auto max-w-[1120px] px-6 py-24">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
@@ -512,15 +485,9 @@ export default function Home() {
 
             <div className="mt-8 space-y-4">
               {[
-                {
-                  t: "Diagnóstico rápido",
-                  d: "Entenda seu momento em minutos.",
-                },
+                { t: "Diagnóstico rápido", d: "Entenda seu momento em minutos." },
                 { t: "Jornada diária", d: "Lições curtas + desafios reais." },
-                {
-                  t: "Carteira de hábitos",
-                  d: "Metas, registros e consistência.",
-                },
+                { t: "Carteira de hábitos", d: "Metas, registros e consistência." },
               ].map((item) => (
                 <div
                   key={item.t}
@@ -536,19 +503,21 @@ export default function Home() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(400px_300px_at_30%_30%,rgba(46,230,255,0.08),transparent)]">
+            <div className="aspect-[4/3] rounded-2xl border border-white/10 bg-[radial-gradient(400px_300px_at_30%_30%,rgba(46,230,255,0.08),transparent)] grid place-items-center overflow-hidden">
               <img
                 src="/mockup.jpg"
-                alt="Mockup do app ORVY"
-                className="absolute inset-0 w-full h-full object-cover"
+                alt="ORVY app mockup"
+                className="h-full w-full object-cover"
+                loading="lazy"
               />
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(3,10,16,0.0),rgba(3,10,16,0.22))]" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* WAITLIST */}
+      {/* ═══════════════════════════════════════════════════════
+          WAITLIST
+      ═══════════════════════════════════════════════════════ */}
       <section id="waitlist" className="mx-auto max-w-[1120px] px-6 pb-24">
         <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-8 md:p-12">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
@@ -570,43 +539,72 @@ export default function Home() {
                     >
                       {tag}
                     </span>
-                  )
+                  ),
                 )}
               </div>
             </div>
 
             <form
               className="rounded-2xl border border-white/10 bg-[#030a10]/60 p-6"
-              onSubmit={handleSubmit}
+              onSubmit={async (e) => {
+                e.preventDefault();
+
+                const form = e.currentTarget;
+                const fd = new FormData(form);
+                const email = String(fd.get("email") || "").trim();
+
+                setWaitStatus("loading");
+                setWaitMsg("");
+
+                try {
+                  const res = await fetch("/api/waitlist", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email }),
+                  });
+
+                  const data = await res.json().catch(() => ({}));
+
+                  if (!res.ok || !data?.ok) {
+                    throw new Error(data?.error || "Erro ao enviar");
+                  }
+
+                  form.reset();
+                  setWaitStatus("success");
+                } catch (err: any) {
+                  setWaitStatus("error");
+                  setWaitMsg(err?.message || "Não foi possível enviar.");
+                }
+              }}
             >
               <label className="text-sm font-medium text-[#f5f5f0]">
                 Seu e-mail
               </label>
               <input
+                name="email"
                 type="email"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 placeholder="voce@exemplo.com"
                 className="mt-2 w-full rounded-xl border border-white/10 bg-[#030a10] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none focus:border-[#2EE6FF]/50 transition-colors"
               />
               <button
                 type="submit"
-                disabled={submitting}
-                className="mt-4 w-full rounded-full bg-[#2EE6FF] px-4 py-3 text-sm font-semibold text-[#030a10] hover:bg-[#20B8CD] transition-colors disabled:opacity-60 disabled:hover:bg-[#2EE6FF]"
+                disabled={waitStatus === "loading"}
+                className="mt-4 w-full rounded-full bg-[#2EE6FF] px-4 py-3 text-sm font-semibold text-[#030a10] hover:bg-[#20B8CD] transition-colors disabled:opacity-60"
               >
-                {submitting ? "Enviando…" : "Quero ser avisado"}
+                {waitStatus === "loading" ? "Enviando…" : "Quero ser avisado"}
               </button>
-              {submitted === "ok" && (
-                <p className="mt-3 text-xs text-[#2EE6FF] text-center">
-                  Entrou! Te avisamos assim que abrir.
+
+              {waitStatus !== "idle" && (
+                <p className="mt-3 text-xs text-center text-[#f5f5f0]/55">
+                  {waitStatus === "success"
+                    ? "Pronto! Você entrou na lista."
+                    : waitStatus === "error"
+                      ? waitMsg || "Não foi possível enviar. Tente de novo."
+                      : ""}
                 </p>
               )}
-              {submitted === "error" && (
-                <p className="mt-3 text-xs text-red-300 text-center">
-                  Ops! Não deu. Tenta de novo.
-                </p>
-              )}
+
               <p className="mt-3 text-xs text-[#f5f5f0]/40 text-center">
                 Sem spam. Só lançamento, beta e atualizações.
               </p>
@@ -635,15 +633,85 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ═══════════════════════════════════════════════════════
+          FOOTER
+      ═══════════════════════════════════════════════════════ */}
       <footer className="mx-auto max-w-[1120px] px-6 pb-10">
         <div className="flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between text-xs text-[#f5f5f0]/40">
-          <span suppressHydrationWarning>
-            © {new Date().getFullYear()} ORVY
-          </span>
+          <span suppressHydrationWarning>© {new Date().getFullYear()} ORVY</span>
           <span>Download disponível em breve</span>
         </div>
       </footer>
     </main>
   );
+}
+
+import { NextResponse } from "next/server";
+
+export const runtime = "nodejs";
+
+const WEBAPP_URL =
+  process.env.GOOGLE_APPS_SCRIPT_URL ||
+  "https://script.google.com/macros/s/AKfycbzCm0tfYMSg_rsGWsiANeCIyy6sMa-TBGQwRSeQWR6SBO9A4qPWM0GsifUXSYPWwTw/exec";
+
+function json(data: unknown, status = 200) {
+  return NextResponse.json(data, { status });
+}
+
+function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
+}
+
+export async function GET() {
+  return json({ ok: true, hint: "POST { email } to /api/waitlist" });
+}
+
+export async function POST(req: Request) {
+  try {
+    const contentType = req.headers.get("content-type") || "";
+    let email = "";
+
+    if (contentType.includes("application/json")) {
+      const body = (await req.json().catch(() => ({}))) as { email?: string };
+      email = String(body?.email || "");
+    } else {
+      const form = await req.formData();
+      email = String(form.get("email") || "");
+    }
+
+    email = email.trim().toLowerCase();
+
+    if (!email || !isValidEmail(email)) {
+      return json({ ok: false, error: "invalid_email" }, 400);
+    }
+
+    // Send as x-www-form-urlencoded (works with e.parameter on Apps Script)
+    const payload = new URLSearchParams({
+      email,
+      source: "orvy-landing",
+      ts: new Date().toISOString(),
+    });
+
+    const res = await fetch(WEBAPP_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: payload,
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      const txt = await res.text().catch(() => "");
+      return json(
+        { ok: false, error: "apps_script_failed", details: txt.slice(0, 300) },
+        502,
+      );
+    }
+
+    return json({ ok: true });
+  } catch (e: any) {
+    console.error(e);
+    return json({ ok: false, error: e?.message ?? "server_error" }, 500);
+  }
 }
