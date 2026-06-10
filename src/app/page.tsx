@@ -475,6 +475,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── O QUE É A ORVY ── */}
+      <section className="mx-auto max-w-[1200px] px-6 pb-20 pt-4">
+        {/* definição central */}
+        <div className="text-center mb-16">
+          <p className="text-xs font-bold tracking-[0.14em] uppercase text-[#20B8CD] mb-5">O que é a Orvy</p>
+          <h2 className="text-[28px] sm:text-[40px] font-bold leading-[1.2] tracking-[-0.02em] text-[#F0F4F8] max-w-[720px] mx-auto mb-5">
+            Um copiloto financeiro para quem vive de renda variável.
+          </h2>
+          <p className="text-[#8A99A8] text-[16px] max-w-[560px] mx-auto leading-relaxed">
+            A Orvy não é app de controle financeiro. Não é planilha. Não é curso. É um sistema que olha o seu dinheiro todo dia e te diz o que você pode fazer sem se apertar — antes de acontecer.
+          </p>
+        </div>
+
+        {/* 3 pilares */}
+        <div className="grid sm:grid-cols-3 gap-4">
+          {[
+            {
+              label: "De controle para decisão",
+              body: "A Orvy não pede que você registre tudo. Ela usa o que você informa para responder a pergunta certa: hoje dá?",
+              icon: (
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 10h12M10 4l6 6-6 6" stroke="#20B8CD" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              ),
+            },
+            {
+              label: "De passado para futuro",
+              body: "A maioria dos apps explica o que já foi gasto. A Orvy prevê o que vai apertar — e avisa antes.",
+              icon: (
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="7" stroke="#20B8CD" strokeWidth="1.5"/>
+                  <path d="M10 6v4l2.5 2.5" stroke="#20B8CD" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              ),
+            },
+            {
+              label: "De dashboard para resposta",
+              body: "Sem gráfico para interpretar. A tela principal da Orvy começa com uma frase: hoje você pode gastar R$ X com segurança.",
+              icon: (
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M3 10h3l2-5 4 10 2-5h3" stroke="#20B8CD" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              ),
+            },
+          ].map((p) => (
+            <div key={p.label} style={{ background: "#0D1117", border: "1px solid #1E2A35", borderRadius: 18, padding: "28px 24px" }}
+              className="hover:border-[#20B8CD]/25 transition-colors">
+              <div style={{ width: 40, height: 40, background: "rgba(32,184,205,0.08)", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
+                {p.icon}
+              </div>
+              <div className="text-[15px] font-bold text-[#F0F4F8] mb-2">{p.label}</div>
+              <div className="text-[13px] text-[#8A99A8] leading-relaxed">{p.body}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── APP MOCKUP ── */}
       <section id="produto" className="mx-auto max-w-[1200px] px-6 pb-28">
         <div className="section-grid-2" style={{
