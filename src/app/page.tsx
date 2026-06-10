@@ -41,6 +41,29 @@ function GlobalKeyframes() {
         50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
         100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
       }
+
+      /* ── MOBILE RESPONSIVE ── */
+      @media (max-width: 768px) {
+        .section-grid-2 {
+          grid-template-columns: 1fr !important;
+          padding: 32px 24px !important;
+          gap: 40px !important;
+        }
+        .waitlist-grid {
+          grid-template-columns: 1fr !important;
+          padding: 36px 24px !important;
+          gap: 36px !important;
+        }
+        .answers-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .steps-grid-mobile {
+          grid-template-columns: 1fr !important;
+        }
+        .steps-connector {
+          display: none !important;
+        }
+      }
     `}</style>
   );
 }
@@ -454,7 +477,7 @@ export default function Home() {
 
       {/* ── APP MOCKUP ── */}
       <section id="produto" className="mx-auto max-w-[1200px] px-6 pb-28">
-        <div style={{
+        <div className="section-grid-2" style={{
           background: "#0D1117", border: "1px solid #1E2A35", borderRadius: 24, padding: "48px 56px",
           display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center",
           position: "relative", overflow: "hidden",
@@ -538,9 +561,9 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="relative grid grid-cols-5 gap-0">
+        <div className="relative steps-grid-mobile" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 0 }}>
           {/* connector line */}
-          <div style={{ position: "absolute", top: 27, left: "calc(10% + 14px)", right: "calc(10% + 14px)", height: 1, background: "linear-gradient(90deg, transparent, #1E2A35, #20B8CD, #1E2A35, transparent)" }} />
+          <div className="steps-connector" style={{ position: "absolute", top: 27, left: "calc(10% + 14px)", right: "calc(10% + 14px)", height: 1, background: "linear-gradient(90deg, transparent, #1E2A35, #20B8CD, #1E2A35, transparent)" }} />
 
           {[
             { n: "01", title: "Você informa como seu dinheiro entra", body: "Pix, clientes, freelas, vendas — do jeito que é na vida real." },
@@ -549,7 +572,7 @@ export default function Home() {
             { n: "04", title: "Te avisa antes do aperto", body: "O Radar de Sufoco prevê quando o dinheiro pode acabar." },
             { n: "05", title: "Você fecha a semana no verde", body: "Com progresso, resumo semanal e próxima missão." },
           ].map((s) => (
-            <div key={s.n} className="flex flex-col items-center text-center px-3 gap-4 group">
+            <div key={s.n} className="flex flex-col sm:items-center sm:text-center items-start text-left px-3 gap-4 group">
               <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#131820", border: "1px solid #1E2A35", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 800, color: "#20B8CD", position: "relative", zIndex: 2, flexShrink: 0 }}
                 className="group-hover:border-[#20B8CD] group-hover:shadow-[0_0_20px_rgba(32,184,205,0.2)] transition-all">
                 {s.n}
@@ -632,7 +655,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "#1E2A35", border: "1px solid #1E2A35", borderRadius: 20, overflow: "hidden" }}>
+          <div className="answers-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "#1E2A35", border: "1px solid #1E2A35", borderRadius: 20, overflow: "hidden" }}>
             {[
               { q: "Posso comprar isso?", a: "A Orvy simula o impacto do gasto no seu limite seguro e diz se dá, se dá com cuidado, ou se é melhor esperar." },
               { q: "Vai faltar dinheiro?", a: "O Radar de Sufoco projeta os próximos dias e avisa quando e por que o dinheiro pode acabar antes da próxima entrada." },
@@ -680,7 +703,7 @@ export default function Home() {
 
       {/* ── WAITLIST ── */}
       <section id="waitlist" className="mx-auto max-w-[1200px] px-6 py-24">
-        <div style={{ background: "#0D1117", border: "1px solid #1E2A35", borderRadius: 28, padding: "64px 72px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center", position: "relative", overflow: "hidden" }}>
+        <div className="waitlist-grid" style={{ background: "#0D1117", border: "1px solid #1E2A35", borderRadius: 28, padding: "64px 72px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center", position: "relative", overflow: "hidden" }}>
           {/* top line */}
           <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(90deg, transparent, #20B8CD 50%, transparent)", opacity: 0.6 }} />
           {/* glow */}
